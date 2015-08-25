@@ -1,0 +1,3 @@
+[pladmin@LT-web1 ~]$ cd /usr/local/webserver/project_tomcat/dianlan/tomcat/logs/
+[pladmin@LT-web1 logs]$ ll
+[pladmin@LT-web1 logs]$ tail -200f catalina.out 

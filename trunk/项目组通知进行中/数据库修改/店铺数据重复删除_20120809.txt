@@ -1,0 +1,9 @@
+□切替内容
+  lz006026 数据去重
+  
+□切替
+select SEQUENCE_NO,NAME,STATUS,CREATE_TIME from lz006026 where user_id=5617;
+
+delete lz006026 where SEQUENCE_NO=?;
+
+select SEQUENCE_NO,NAME,STATUS,CREATE_TIME from lz006026 where user_id=5617;

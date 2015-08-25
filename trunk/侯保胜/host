@@ -1,0 +1,89 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, cnments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.cn          # source server
+#       38.25.63.10     x.acme.cn              # x client host
+
+#127.0.0.1       localhost
+192.168.4.221  apps.dianlan.cn
+192.168.4.221  quote.dianlan.cn
+192.168.4.221  ask.dianlan.cn
+192.168.4.221  bbs.dianlan.cn
+192.168.4.221  book.dianlan.cn
+192.168.4.221  baike.dianlan.cn
+192.168.4.221  api.byceb.cn
+#127.0.0.1       jiage.localhost   
+#127.0.0.1       qiuzhi.localhost  
+#127.0.0.1       zhaopin.localhost 
+#127.0.0.1       admin.localhost   
+#127.0.0.1       kucun.localhost   
+#127.0.0.1       gongying.localhost
+#127.0.0.1       qiugou.localhost  
+#127.0.0.1       shangji.localhost 
+#127.0.0.1       chanpin.localhost 
+#127.0.0.1       kehu.localhost    
+#127.0.0.1       shangqi.localhost 
+#127.0.0.1       zixun.localhost   
+#127.0.0.1       xiangmu.localhost 
+#127.0.0.1     lingjun.localhost            
+#127.0.0.1       jingbiao.localhost
+#127.0.0.1       admin.localhost              
+#192.168.4.221   log.dianlan.cn
+#127.0.0.1     jiage.dianlan.cn
+                            
+#192.168.4.150 www.dianlan.cn        
+#192.168.4.150 www.honghu.cn        
+#192.168.4.150 www.linzuo.cn        
+#                              
+#192.168.4.150 apps.dianlan.cn       
+#192.168.4.150 api.byceb.cn         
+#192.168.4.150 admin.dianlan.cn     
+#192.168.4.220 image.dianlan.cn      
+#192.168.4.150 bbs.dianlan.cn        
+#192.168.4.150 ask.dianlan.cn        
+#192.168.4.150 book.dianlan.cn       
+#192.168.4.150 quote.dianlan.cn      
+#192.168.4.150 baike.dianlan.cn      
+#192.168.4.150 news.dianlan.cn       
+#192.168.4.150 kuaibao.dianlan.cn    
+#192.168.4.150 duihua.dianlan.cn     
+#192.168.4.150 zhanhui.dianlan.cn    
+#                            
+#192.168.4.150 jiage.dianlan.cn      
+#192.168.4.150 kucun.dianlan.cn      
+#192.168.4.150 gongying.dianlan.cn   
+#192.168.4.150 qiugou.dianlan.cn     
+#192.168.4.150 shangji.dianlan.cn    
+#192.168.4.150 chanpin.dianlan.cn    
+#192.168.4.150 kehu.dianlan.cn       
+#192.168.4.150 zhaopin.dianlan.cn    
+#192.168.4.150 qiuzhi.dianlan.cn     
+#192.168.4.150 jingbiao.dianlan.cn   
+#192.168.4.150 xiangmu.dianlan.cn    
+#192.168.4.150 qiye.dianlan.cn       
+#192.168.4.150 pinpai.dianlan.cn     
+#192.168.4.150 dongtai.dianlan.cn    
+#192.168.4.150 zhanshi.dianlan.cn    
+#192.168.4.150 zhaobiao.dianlan.cn   
+#192.168.4.150 zhongbiao.dianlan.cn  
+#192.168.4.150 renwu.dianlan.cn      
+#192.168.4.150 jingying.dianlan.cn   
+#192.168.4.150 zhuanjia.dianlan.cn   
+#192.168.4.150 shanggu.dianlan.cn    
+#192.168.4.150 xinren.dianlan.cn     
+#                
+#192.168.4.150 tian_qiye.dianlan.cn  
+#192.168.4.150 hatewb.dianlan.cn     
+#192.168.4.150 mutangchun7.dianlan.cn

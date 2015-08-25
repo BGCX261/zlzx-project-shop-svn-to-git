@@ -1,0 +1,52 @@
+□切替内容
+  发布人变更
+  ※济南翔宇电缆→※济南齐鲁电缆
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120731_1941.dmp TABLES=LZ003209,LZ006011,LZ006026,LZ007001,LZ007002,LZ007003,LZ007004,LZ007013,LZ007020,LZ007021,LZ007022;
+
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+□事前确认
+
+SELECT publish_People FROM Lz006011 WHERE publish_People in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT ISSUER         FROM lz006026 WHERE ISSUER         in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007001 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007002 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT ISSUER         FROM Lz003209 WHERE ISSUER         in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007003 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007004 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007013 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT PUBLISHER_NAME FROM LZ007020 WHERE PUBLISHER_NAME in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007021 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007022 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+
+□切替
+UPDATE Lz003209 SET ISSUER         = '※济南齐鲁电缆' WHERE ISSUER        ='※济南翔宇电缆';
+UPDATE Lz006011 SET publish_People = '※济南齐鲁电缆' WHERE publish_People='※济南翔宇电缆';
+UPDATE lz006026 SET ISSUER         = '※济南齐鲁电缆' WHERE ISSUER        ='※济南翔宇电缆';
+UPDATE Lz007001 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007002 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007003 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007004 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007013 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007020 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007021 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+UPDATE Lz007022 SET publisher_Name = '※济南齐鲁电缆' WHERE publisher_Name='※济南翔宇电缆';
+
+
+
+□确认
+SELECT publish_People FROM Lz006011 WHERE publish_People in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT ISSUER         FROM lz006026 WHERE ISSUER         in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007001 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007002 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT ISSUER         FROM Lz003209 WHERE ISSUER         in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007003 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007004 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007013 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT PUBLISHER_NAME FROM LZ007020 WHERE PUBLISHER_NAME in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007021 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+SELECT publisher_Name FROM Lz007022 WHERE publisher_Name in ('※济南翔宇电缆','※济南齐鲁电缆');
+
+commit;

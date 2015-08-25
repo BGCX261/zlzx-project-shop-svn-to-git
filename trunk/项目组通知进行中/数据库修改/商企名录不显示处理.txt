@@ -1,0 +1,67 @@
+-----------------------------------(wfyanggudianlan)商企名录问题处理------------------------
+商企名录问题处理  
+wfyanggudianlan    user_id:5461
+涉及到的表:
+LZ007007 用户别品牌表   BRAND_ID:1499,1500    VERIFY_MODE:1,1
+LZ006028 商企表         COMPANY_ID:1330  STATUS:1
+LZ006027 品牌表         BRAND_ID:1500    VERIFY_MODE:1,1     STATUS:1,1
+
+----------------wfyanggudianlan 确认数据
+select user_id from lz006001 where user_name='wfyanggudianlan';         
+select user_id,BRAND_ID ,VERIFY_MODE   from LZ007007 where user_id=5461;
+select user_id,COMPANY_ID,STATUS       from lz006028 where user_id=5461;
+select BRAND_ID,VERIFY_MODE,COMPANY_ID from lz006027 where COMPANY_ID=1330;
+select COMPANY_ID,VERIFY_MODE,STATUS   from lz006027 where BRAND_ID in(1499,1500);
+----------------DB更新
+update lz006027 set COMPANY_ID='1330',VERIFY_MODE='1',STATUS='1' where BRAND_ID='1500';
+----------------DB确认
+select COMPANY_ID,VERIFY_MODE,STATUS from lz006027 where BRAND_ID in(1499,1500); 
+
+
+
+-----------------------------------(wfttdl)商企名录问题处理------------------------
+----------------wfttdl 确认数据
+select user_id from lz006001 where user_name='wfttdl';    
+     
+select user_id,BRAND_ID ,VERIFY_MODE   from LZ007007 where user_id=;
+select user_id,COMPANY_ID,STATUS       from lz006028 where user_id=;
+select BRAND_ID,VERIFY_MODE,COMPANY_ID from lz006027 where COMPANY_ID=;
+select COMPANY_ID,VERIFY_MODE,STATUS   from lz006027 where BRAND_ID in();
+----------------DB更新
+update lz006027 set COMPANY_ID='?',VERIFY_MODE='1',STATUS='1' where BRAND_ID='';
+----------------DB确认
+select COMPANY_ID,VERIFY_MODE,STATUS from lz006027 where BRAND_ID in(); 
+
+
+
+-----------------------------------(sdghdl)商企名录问题处理------------------------
+----------------sdghdl 确认数据
+select user_id from lz006001 where user_name='sdghdl';         
+select user_id,BRAND_ID ,VERIFY_MODE   from LZ007007 where user_id='';
+select user_id,COMPANY_ID,COMPANY_NAME,STATUS from lz006028 where user_id='5613';
+select BRAND_ID,VERIFY_MODE,COMPANY_ID from lz006027 where COMPANY_ID='';
+select COMPANY_ID,VERIFY_MODE,STATUS   from lz006027 where BRAND_ID in();
+----------------DB更新
+update lz006027 set COMPANY_ID='?',VERIFY_MODE='1',STATUS='1' where BRAND_ID='';
+----------------DB确认
+select COMPANY_ID,VERIFY_MODE,STATUS from lz006027 where BRAND_ID in(); 
+
+
+
+
+
+
+ SELECT t5.USER_ID,substr(t5.BRAND_ID,2,1) as AUTHORIZED,t6.BRAND_ID,t6.NAME,t8.CHANNEL_ID_INTRO,t6.STATUS
+      FROM  (--取得品牌（一个）
+            SELECT USER_ID as USER_ID,
+                  max(OWN_BRAND_MODE || AUTHORIZED || to_char(BRAND_ID,'fm09999999') ) as BRAND_ID
+            FROM  LZ007007
+            WHERE VERIFY_MODE = '1'  --审核通过
+            GROUP BY USER_ID
+           ) t5,
+           LZ006027 t6 , LZ006028 t8
+      WHERE t6.BRAND_ID = to_number(substr(t5.BRAND_ID,3))
+        AND t6.VERIFY_MODE = '1'  --品牌审核通过
+        AND t6.COMPANY_ID = t8.COMPANY_ID
+		AND t8.STATUS = '1'
+

@@ -1,0 +1,23 @@
+SELECT ISSUER FROM Lz003209 WHERE ISSUER='北京市天二电线电缆供应站';
+SELECT publish_People FROM Lz006011 WHERE publish_People='北京市天二电线电缆供应站';
+SELECT ISSUER FROM lz006026 WHERE ISSUER='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007001 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007002 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007003 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007004 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007013 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT PUBLISHER_NAME FROM LZ007020 WHERE PUBLISHER_NAME='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007021 WHERE publisher_Name='北京市天二电线电缆供应站';
+SELECT publisher_Name FROM Lz007022 WHERE publisher_Name='北京市天二电线电缆供应站';
+----------------------------北京市天二电线电缆供应站------------------------------------------------------
+UPDATE Lz003209 SET ISSUER = '天二线缆' WHERE ISSUER='北京市天二电线电缆供应站';
+UPDATE Lz006011 SET publish_People = '天二线缆' WHERE publish_People='北京市天二电线电缆供应站';
+UPDATE lz006026 SET ISSUER = '天二线缆' WHERE ISSUER='北京市天二电线电缆供应站';
+UPDATE Lz007001 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007002 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007003 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007004 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007013 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007020 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007021 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+UPDATE Lz007022 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';

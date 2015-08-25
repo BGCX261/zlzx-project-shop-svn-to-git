@@ -1,0 +1,19 @@
+□切替内容
+  店铺开通状态修改
+  关闭状态→开通状态
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120802_1130.dmp TABLES=LZ006026;
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+
+□切替
+select user_id,user_name from Lz006001 where user_name = 'aaacable';
+
+select user_id,status    from Lz006026 where user_id   = ?;
+
+update Lz006026 set status = '2' where user_id         = ?;
+
+select user_id,status    from Lz006026 where user_id   = ?;
+
+commit;

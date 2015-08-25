@@ -1,0 +1,28 @@
+□切替内容
+  公司简介去重
+  绿宝
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120712_1135.dmp TABLES=LZ006010;
+
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+□事前确认
+
+SELECT USER_ID FROM LZ006001 WHERE USER_NAME='lvbao';
+SELECT TITLE,CONTENTS FROM LZ006010 WHERE USER_ID=? AND TWO_ID='T001';
+
+
+
+□切替
+DELETE FROM LZ006010 WHERE SEQUENCE_NO=?;
+
+
+□确认
+//DB确认
+SELECT TITLE,CONTENTS FROM LZ006010 WHERE USER_ID=? AND TWO_ID='T001';
+
+commit;
+
+//画面确认
+lvbao.dianlan.cn 首页

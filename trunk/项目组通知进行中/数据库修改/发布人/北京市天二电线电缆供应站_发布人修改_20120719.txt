@@ -1,0 +1,26 @@
+□切替内容
+  发布人变更
+  北京市天二电线电缆供应站→天二线缆
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120719_0931.dmp TABLES=LZ007001;
+
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+□事前确认
+
+SELECT publisher_Name FROM Lz007001 WHERE publisher_Name='北京市天二电线电缆供应站';
+
+□切替
+UPDATE Lz007001 SET publisher_Name = '天二线缆' WHERE publisher_Name='北京市天二电线电缆供应站';
+
+
+□确认
+//DB确认
+SELECT publisher_Name FROM Lz007001 WHERE publisher_Name='天二线缆';
+
+commit;
+
+//画面确认
+前台库存页面
+http://www.dianlan.cn/lzj/kucun.html

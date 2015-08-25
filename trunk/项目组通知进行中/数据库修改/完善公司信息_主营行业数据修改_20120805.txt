@@ -1,0 +1,18 @@
+
+一、备份lz006026表
+二、执行如下语句返回结果
+
+
+
+
+--①更新其他 
+ 
+select main_Industry_Id from lz006026  where    main_Industry_Id  like ('%54%');
+update lz006026 set main_Industry_Id='420'  where   main_Industry_Id    not in (select main_Industry_Id from lz006026  where    main_Industry_Id  like ('%54%'));
+select main_Industry_Id from lz006026  where    main_Industry_Id='420' ;
+   
+--②更新电线电缆 
+
+select main_Industry_Id from lz006026   where main_Industry_Id  like ('%54%'); 
+update lz006026 set main_Industry_Id='412'   where main_Industry_Id  like ('%54%'); 
+select main_Industry_Id  from lz006026   where main_Industry_Id='412';

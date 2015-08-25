@@ -1,0 +1,27 @@
+□切替内容
+  领导致辞去重
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120802_1614.dmp TABLES=LZ006010;
+
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+□事前确认
+
+select user_id,user_name from Lz006001 where user_name = 'CQBFXL';
+select sequence_no,title from lz006010 where two_id='T002' and user_id=?;
+
+--会出现两条数据,删除第二条
+
+□切替
+
+delete from lz006010 where sequence_no=?
+
+
+□确认
+//DB确认
+select sequence_no,title from lz006010 where two_id='T002' and user_id=?;
+--只有一条数据
+
+commit;
+

@@ -1,0 +1,46 @@
+□切替内容
+  店铺名称变更
+  ,烟台鑫宇五金交电有限公司烟台鑫宇五金交电有限公司→烟台鑫宇五金交电有限公司烟台鑫宇五金交电有限公司
+
+《SQL文》
+expdp zlzxdb/zlzxdb@rac1 directory=dump_dir dumpfile=20120727_0957.dmp TABLES=LZ006026;
+sqlplus zlzxdb/zlzxdb@zlzxdb01
+set pages 1000
+
+□切替
+select user_id,user_name from Lz006001 where user_name = 'yantaijinyuan'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '烟台鑫宇五金交电有限公司' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'ytldxdl'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '烟台绿灯行电缆有限公司' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'jilinbeida'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '吉林市北达线缆有限公司销售部 ' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'hanhedianlan'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '青岛汉缆股份有限公司品牌直营店' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'CQBFXL'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '重庆宝丰线缆有限公司北京销售分公司' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'huadongdianlan'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '东营区蓝琼电线电缆经营部华东电缆直销处' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+select user_id,user_name from Lz006001 where user_name = 'NXBDXL'
+select user_id,name from Lz006026 where user_id = ?
+update lz006026 set name = '天津北达线缆集团宁夏分公司' where user_id = ?
+select user_id,name from Lz006026 where user_id = ?
+
+commit;
